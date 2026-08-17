@@ -7,5 +7,5 @@
 - Render saved facades with state-selected textures, layers, tint, rotation,
   and cable or part apertures.
 - Normalize changing screens, values, lights, contents, and activity.
-- Correct horizontal primitive winding after Minecraft/BlueMap comparison.
+- Correct top and bottom primitive winding after Minecraft/BlueMap comparison.
 - Pass the six-check disposable gallery and owner visual acceptance.
