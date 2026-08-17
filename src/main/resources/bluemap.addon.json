@@ -1,0 +1,6 @@
+{
+  "id": "bluemap-integrateddynamics",
+  "entrypoint": "io.github.janguenter.bluemap.integrateddynamics.BlueMapIntegratedDynamicsAddon",
+  "dependencies": [],
+  "soft-dependencies": []
+}

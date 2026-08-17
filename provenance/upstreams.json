@@ -1,0 +1,127 @@
+{
+  "schema_version": 1,
+  "project_license": "MIT",
+  "implementation_lane": "independent-runtime-interface-resource-and-persisted-state-adapter",
+  "baseline": {
+    "pack": "All the Mons 1.2.0",
+    "pack_commit": "c7bb230f21d14d26859d0b92548f089b3a493ad9",
+    "minecraft": "1.21.1",
+    "neoforge": "21.1.248",
+    "java": 21
+  },
+  "accepted_release": {
+    "version": "0.1.0-alpha.1",
+    "date": "2026-08-17",
+    "file_name": "bluemap-integrated-dynamics-addon-0.1.0-alpha.1.jar",
+    "size": 51482,
+    "sha256": "abbc6e4e910572a88323856d153d16cc7909542c553b2be0d89b5c2aa7d77b32",
+    "release_assets": {
+      "sources_jar": {
+        "size": 22546,
+        "sha256": "93a03437552c250f1d0d38e8549b669c46d7c3e9dbce5d128954cfa7fff7d9d6"
+      },
+      "pom": {
+        "size": 1430,
+        "sha256": "4f01d7feb501bb74a2aaf05ffd50a863da74f2010d4374073e2c9f2894ddc6a9"
+      },
+      "gradle_module": {
+        "size": 2901,
+        "sha256": "cbaeeee2ef4e019b92ed72cee4eed87f0f57bf94702ef9c01e816324a484686d"
+      },
+      "sha256sums": {
+        "size": 496,
+        "sha256": "ff076b7200aefbead7a78803ec82afbd4d3fbbb413639acd2957b328810f68fc"
+      }
+    },
+    "gallery": {
+      "invocations": 1,
+      "successes": 6,
+      "failures": 0,
+      "owner_visual_acceptance": true
+    }
+  },
+  "bluemap": {
+    "backport_version": "5.22-agent.backport-5.22-mc1.21.1-2",
+    "backport_commit": "9be321df995a1103808621d529eb72773e719d4d",
+    "api_commit": "285c9a60eff3ac2b0cab308ce1058d1565be0971",
+    "release_jar_sha256": "749f7647fa29764cea113114a7ab3259271bab3da22720989f2bd9fd1f3ba150",
+    "declared_license": "MIT",
+    "bundled": false
+  },
+  "first_party_template": {
+    "pipez": {
+      "repository": "https://github.com/jan-guenter/bluemap-pipez-addon",
+      "version": "0.1.0-alpha.1",
+      "commit": "fa3e773a7d1b7e9af52277bf104e70f704b0bb2a",
+      "declared_license": "MIT",
+      "reuse": "build and release structure, activation state, compatibility guard, bounded diagnostics, lighting, and JSON model emission mechanics; no Pipez profile, resource, or persisted-state observation"
+    },
+    "sophisticated": {
+      "repository": "https://github.com/jan-guenter/bluemap-sophisticated-addon",
+      "commit": "a75b1d82c3987fa9360a1e8a5910eedf90aca7cb",
+      "declared_license": "MIT",
+      "reuse": "primitive-emitter design pattern only; no Sophisticated profile, resource, or persisted-state observation"
+    }
+  },
+  "artifacts": {
+    "cyclopscore": {
+      "version": "1.21.1-neoforge-1.29.2",
+      "file_name": "cyclopscore-1.21.1-neoforge-1.29.2.jar",
+      "size": 1161287,
+      "sha256": "1d36aaa3d9abb71d0151bb5edd02f5580dfb020a229c63f6534a87a04d1cfab6",
+      "declared_license": "MIT",
+      "bundled": false
+    },
+    "integrateddynamics": {
+      "version": "1.21.1-neoforge-1.34.0",
+      "file_name": "integrateddynamics-1.21.1-neoforge-1.34.0.jar",
+      "size": 4369336,
+      "sha256": "2e6afc62a572cf3e1bd6b91321946790103c72793bc5fe1d0295c1138c072e87",
+      "declared_license": "MIT",
+      "bundled": false
+    },
+    "integratedtunnels": {
+      "version": "1.21.1-neoforge-1.9.4-652",
+      "file_name": "integratedtunnels-1.21.1-neoforge-1.9.4-652.jar",
+      "size": 682381,
+      "sha256": "90dfa97a5666e377197e83fb3b90bdc4bb4a337eac61c7baa2336d8ce0573ca0",
+      "declared_license": "MIT",
+      "bundled": false
+    },
+    "integratedterminals": {
+      "version": "1.21.1-neoforge-1.7.0-800",
+      "file_name": "integratedterminals-1.21.1-neoforge-1.7.0-800.jar",
+      "size": 662663,
+      "sha256": "add10be15370234fd1491c318f1fadc2d7b621aa31ecf674a9c38f8b5befec92",
+      "declared_license": "MIT",
+      "bundled": false
+    },
+    "integratedcrafting": {
+      "version": "1.21.1-neoforge-1.4.6-605",
+      "file_name": "integratedcrafting-1.21.1-neoforge-1.4.6-605.jar",
+      "size": 377591,
+      "sha256": "25651914d0e59120129829687ad8f9a8ab44e6fd2c3176c53bb219b3764d58a4",
+      "declared_license": "MIT",
+      "bundled": false
+    },
+    "integratedscripting": {
+      "version": "1.21.1-neoforge-1.0.24-424",
+      "file_name": "integratedscripting-1.21.1-neoforge-1.0.24-424.jar",
+      "size": 27892500,
+      "sha256": "10cafdeeece71175741f8b6c405c1bbfca09c7dfff416b565b87720af4f40545",
+      "declared_license": "MIT",
+      "bundled": false
+    }
+  },
+  "source_correlations": {
+    "integrateddynamics": "ac56e1db6d591de58061fd7b96c95ddd60c909ed",
+    "integratedtunnels": "d858740f175be5c0fc76f8d5f101a4065304755c",
+    "integratedterminals": "423f42622b21ed79559309fbf2d1eb6c20d1aefe",
+    "integratedcrafting": "352bce1cfd1d57aef79aeb17b38895aaac0cac39",
+    "integratedscripting": "d628b1906d57426ced9ba6da92018db76cf26fc3",
+    "status": "release-tag-correlated-to-exact-version; source not bundled"
+  },
+  "historical_discovery": {
+    "all_the_mons_1_1_1": "historical hint only; not evidence for this release"
+  }
+}
