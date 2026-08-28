@@ -40,6 +40,36 @@
       "owner_visual_acceptance": true
     }
   },
+  "aggregate_candidate": {
+    "version": "0.1.0-alpha.2",
+    "date": "2026-08-28",
+    "status": "pending-combined-runtime-acceptance",
+    "file_name": "bluemap-integrated-dynamics-addon-0.1.0-alpha.2.jar",
+    "size": 54979,
+    "sha256": "11fdae6eb18513d7d06bbca1973e2eded36ae12f30a69bd9e09af148f8e70f18",
+    "aggregate_fault": {
+      "reason": "malformed installed animation metadata aborts BlueMap atlas loading before the cable texture",
+      "fallback_policy": "preserve a normal atlas winner; otherwise install the first physical 16x16 cable texture in BlueMap resource-root priority order"
+    },
+    "release_assets": {
+      "sources_jar": {
+        "size": 23916,
+        "sha256": "8aca1d9e8b7bd79907daf3e92627bbe0788a2f384461c8a1cdc7d3319c8dc95b"
+      },
+      "pom": {
+        "size": 1430,
+        "sha256": "acb19314d78f399cc80847a8a441c5dcd93e937aed089113d97d34486fd8d127"
+      },
+      "gradle_module": {
+        "size": 2901,
+        "sha256": "a828ee0c44390caf2548cbc099775f28b4497c08f637136bbf4b0b75dbc06b4c"
+      },
+      "sha256sums": {
+        "size": 496,
+        "sha256": "4523f4e08409da4e58c94aa8dad0c795c0151afc2d2b8b9b55697375e9288e34"
+      }
+    }
+  },
   "bluemap": {
     "backport_version": "5.22-agent.backport-5.22-mc1.21.1-2",
     "backport_commit": "9be321df995a1103808621d529eb72773e719d4d",

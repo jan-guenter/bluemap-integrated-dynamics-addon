@@ -18,6 +18,7 @@ import de.bluecolored.bluemap.core.world.BlockProperties;
 import de.bluecolored.bluemap.core.world.BlockState;
 import io.github.janguenter.bluemap.integrateddynamics.activation.IntegratedDynamicsRuntime;
 
+import java.io.IOException;
 import java.nio.file.Path;
 import java.util.LinkedHashSet;
 import java.util.Set;
@@ -26,13 +27,14 @@ import java.util.Set;
 final class IntegratedDynamicsResourceExtension implements ResourcePackExtension {
 
     private static final Key CABLE = Key.parse("integrateddynamics:cable");
-    private static final Key CABLE_TEXTURE = Key.parse("integrateddynamics:block/cable");
+    private static final Key CABLE_TEXTURE = InstalledCableTexture.KEY;
     private static final Key STONE_TEXTURE = Key.parse("minecraft:block/stone");
     private static final Key OAK_TEXTURE = Key.parse("minecraft:block/oak_planks");
     private static final Key SYNTHETIC = Key.parse("bluemap_integrateddynamics:cable");
 
     private final ResourcePack resourcePack;
     private final IntegratedDynamicsRuntime runtime;
+    private Texture installedCableTexture;
 
     IntegratedDynamicsResourceExtension(
             ResourcePack resourcePack,
@@ -43,11 +45,12 @@ final class IntegratedDynamicsResourceExtension implements ResourcePackExtension
     }
 
     @Override
-    public void loadResources(Iterable<Path> roots) {
+    public void loadResources(Iterable<Path> roots) throws IOException, InterruptedException {
         if (Boolean.getBoolean("bluemap.integrateddynamics.disabled")) {
             runtime.route().inactive("operator-disabled");
         } else {
             runtime.route().activate();
+            installedCableTexture = InstalledCableTexture.find(resourcePack, roots);
         }
     }
 
@@ -87,7 +90,7 @@ final class IntegratedDynamicsResourceExtension implements ResourcePackExtension
         if (!runtime.route().isActive()) {
             return;
         }
-        if (resourcePack.getTextures().get(CABLE_TEXTURE) == null) {
+        if (!InstalledCableTexture.installIfMissing(resourcePack, installedCableTexture)) {
             runtime.route().inactive("cable-texture-missing");
             return;
         }
