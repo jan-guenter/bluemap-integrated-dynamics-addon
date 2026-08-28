@@ -12,6 +12,8 @@ project. It is a standalone public MIT BlueMap add-on, not a NeoForge mod.
   Crafting `1.4.6-605`, and Scripting `1.0.24-424`.
 - Release `0.1.0-alpha.1`: 51,482 bytes, SHA-256
   `abbc6e4e910572a88323856d153d16cc7909542c553b2be0d89b5c2aa7d77b32`.
+- Aggregate candidate `0.1.0-alpha.2`: 54,979 bytes, SHA-256
+  `11fdae6eb18513d7d06bbca1973e2eded36ae12f30a69bd9e09af148f8e70f18`.
 
 Do not treat a matching version string as proof for another artifact or pack.
 
@@ -25,10 +27,12 @@ Do not treat a matching version string as proof for another artifact or pack.
 - Keep the production artifact a plain BlueMap add-on with no NeoForge
   metadata, Mixins, nested JARs, client bootstrap, or world writes.
 - Unknown or malformed data must fail closed without corrupting the tile mesh.
+- Preserve normal texture-atlas priority. The installed cable texture is only
+  a first-wins fallback when BlueMap's atlas omitted that exact key.
 
 ## Validation and release
 
-The accepted production JAR identity is enforced by `check`:
+The recorded candidate production JAR identity is enforced by `check`:
 
 ```bash
 gradle --no-daemon clean check build \
@@ -38,4 +42,5 @@ gradle --no-daemon clean check build \
 
 Release tags must equal `v<addon_version>`. CI and release use the exact
 BlueMap backport commit. Never claim another runtime, publication, or pack
-version without observing it directly.
+version without observing it directly. Candidate `0.1.0-alpha.2` requires the
+combined ATMons runtime/render gate before release.

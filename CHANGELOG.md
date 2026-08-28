@@ -1,5 +1,14 @@
 # Changelog
 
+## 0.1.0-alpha.2 - 2026-08-28
+
+- Retain the installed `integrateddynamics:block/cable` texture when unrelated
+  malformed animation metadata aborts BlueMap's JAR texture pass before the
+  otherwise valid 16-by-16 resource.
+- Preserve the normal atlas winner and use the installed texture only as a
+  first-wins fallback.
+- Add directory, JAR-root, pack-priority, and non-overwrite regression tests.
+
 ## 0.1.0-alpha.1 - 2026-08-17
 
 - Render stable Integrated Dynamics family cable topology and all 48 mounted

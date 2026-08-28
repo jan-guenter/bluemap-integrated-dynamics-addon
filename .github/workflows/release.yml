@@ -46,6 +46,8 @@ jobs:
           test "$(git cat-file -t "refs/tags/${RELEASE_TAG}")" = tag
           test "$(git rev-parse 'HEAD^{commit}')" = \
             "$(git rev-parse "refs/tags/${RELEASE_TAG}^{commit}")"
+          git fetch --no-tags origin main:refs/remotes/origin/main
+          git merge-base --is-ancestor HEAD refs/remotes/origin/main
           echo "VERSION=${version}" >> "${GITHUB_ENV}"
 
       - name: Check out exact BlueMap backport
@@ -68,7 +70,7 @@ jobs:
         with:
           gradle-version: '9.6.1'
 
-      - name: Build and verify accepted bytes
+      - name: Build and verify candidate bytes
         run: |
           python3 -m json.tool provenance/upstreams.json >/dev/null
           gradle --no-daemon \
@@ -77,16 +79,16 @@ jobs:
             generateMetadataFileForAddonPublication
           test "$(stat -c %s \
             "build/libs/bluemap-integrated-dynamics-addon-${VERSION}-sources.jar")" \
-            -eq 22546
+            -eq 23916
           test "$(stat -c %s build/publications/addon/pom-default.xml)" \
             -eq 1430
           test "$(stat -c %s build/publications/addon/module.json)" \
             -eq 2901
           sha256sum --check <<SHA256SUMS
-          abbc6e4e910572a88323856d153d16cc7909542c553b2be0d89b5c2aa7d77b32  build/libs/bluemap-integrated-dynamics-addon-${VERSION}.jar
-          93a03437552c250f1d0d38e8549b669c46d7c3e9dbce5d128954cfa7fff7d9d6  build/libs/bluemap-integrated-dynamics-addon-${VERSION}-sources.jar
-          4f01d7feb501bb74a2aaf05ffd50a863da74f2010d4374073e2c9f2894ddc6a9  build/publications/addon/pom-default.xml
-          cbaeeee2ef4e019b92ed72cee4eed87f0f57bf94702ef9c01e816324a484686d  build/publications/addon/module.json
+          11fdae6eb18513d7d06bbca1973e2eded36ae12f30a69bd9e09af148f8e70f18  build/libs/bluemap-integrated-dynamics-addon-${VERSION}.jar
+          8aca1d9e8b7bd79907daf3e92627bbe0788a2f384461c8a1cdc7d3319c8dc95b  build/libs/bluemap-integrated-dynamics-addon-${VERSION}-sources.jar
+          acb19314d78f399cc80847a8a441c5dcd93e937aed089113d97d34486fd8d127  build/publications/addon/pom-default.xml
+          a828ee0c44390caf2548cbc099775f28b4497c08f637136bbf4b0b75dbc06b4c  build/publications/addon/module.json
           SHA256SUMS
 
       - name: Prepare release bundle
@@ -102,7 +104,7 @@ jobs:
           (cd release && sha256sum --check SHA256SUMS)
           test "$(stat -c %s release/SHA256SUMS)" -eq 496
           test "$(sha256sum release/SHA256SUMS | cut -d ' ' -f 1)" = \
-            ff076b7200aefbead7a78803ec82afbd4d3fbbb413639acd2957b328810f68fc
+            4523f4e08409da4e58c94aa8dad0c795c0151afc2d2b8b9b55697375e9288e34
 
       - name: Create or refresh draft release
         env:
