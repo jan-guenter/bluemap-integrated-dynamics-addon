@@ -1,7 +1,7 @@
 /*
  * SPDX-License-Identifier: MIT
  */
-package io.github.janguenter.bluemap.integrateddynamics.adapter.bluemap522;
+package io.github.janguenter.bluemap.integrateddynamics.adapter.bluemap523;
 
 import de.bluecolored.bluemap.core.resources.pack.resourcepack.ResourcePack;
 import de.bluecolored.bluemap.core.resources.pack.resourcepack.ResourcePackExtension;
@@ -137,7 +137,7 @@ final class IntegratedDynamicsResourceExtension implements ResourcePackExtension
             return false;
         }
         Variant variant = set.getVariants()[0];
-        return variant.getRenderer() == BlueMap522Adapter.renderer()
+        return variant.getRenderer() == BlueMap523Adapter.renderer()
                 && ResourcePack.MISSING_BLOCK_MODEL.equals(variant.getModel());
     }
 }

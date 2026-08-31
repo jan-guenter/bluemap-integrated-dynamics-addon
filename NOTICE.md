@@ -16,5 +16,9 @@ Pipez Add-on `0.1.0-alpha.1`, and the primitive emitter follows the author's
 BlueMap Sophisticated Add-on pattern. Exact reuse provenance is recorded in
 `provenance/upstreams.json`.
 
+The add-on compiles four MIT-licensed sources from BlueMap Add-on Adapter API
+`0.1.0-alpha.2`, commit `e81f08bc4bfbf02d810ec8949a019130e2e61634`.
+Its standalone JAR is not bundled or installed.
+
 Names, identifiers, version strings, paths, file sizes, and cryptographic
 digests are used only to describe compatibility and provenance.

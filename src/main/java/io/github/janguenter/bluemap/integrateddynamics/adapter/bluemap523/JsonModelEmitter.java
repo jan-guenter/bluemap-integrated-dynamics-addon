@@ -4,7 +4,7 @@
  * Model emission follows BlueMap's MIT-licensed resource-model coordinate and
  * UV conventions. It emits only operator-installed Integrated Dynamics family resources.
  */
-package io.github.janguenter.bluemap.integrateddynamics.adapter.bluemap522;
+package io.github.janguenter.bluemap.integrateddynamics.adapter.bluemap523;
 
 import com.flowpowered.math.vector.Vector3f;
 import com.flowpowered.math.vector.Vector4f;
