@@ -2,27 +2,26 @@
 
 [![CI](https://github.com/jan-guenter/bluemap-integrated-dynamics-addon/actions/workflows/ci.yml/badge.svg?branch=main)](https://github.com/jan-guenter/bluemap-integrated-dynamics-addon/actions/workflows/ci.yml)
 
-An exact-profile BlueMap 5.22 add-on for the stable world appearance of the
-Integrated Dynamics family.
+An exact-profile BlueMap 5.23 feature-backport add-on for the stable world
+appearance of the Integrated Dynamics family.
 
 ## Status and compatibility
 
-Version `0.1.0-alpha.2` is the aggregate-test release candidate for this
+Version `0.1.0-alpha.3` is an owner-accepted 5.23 release candidate for this
 environment:
 
 - All the Mons `1.2.0`, Minecraft `1.21.1`, NeoForge `21.1.248`, Java `21`;
-- BlueMap backport `5.22-agent.backport-5.22-mc1.21.1-2`, commit
-  `9be321df995a1103808621d529eb72773e719d4d`;
+- BlueMap feature backport
+  `5.22-feature.backport-5.23-stateless-java-web-server-46`, commit
+  `7e07f4e74ec1e92a6ead9aa1e66054af3e133aac`;
 - Integrated Dynamics `1.34.0`, Tunnels `1.9.4-652`, Terminals `1.7.0-800`,
   Crafting `1.4.6-605`, and Scripting `1.0.24-424`.
 
-The candidate is exactly 54,979 bytes with SHA-256
-`11fdae6eb18513d7d06bbca1973e2eded36ae12f30a69bd9e09af148f8e70f18`.
-It preserves the accepted alpha.1 rendering and adds a first-wins fallback for
+It preserves the accepted alpha.1 rendering and the alpha.2 first-wins fallback for
 the installed cable texture when malformed animation metadata elsewhere in the
 same JAR aborts BlueMap's texture pass before that key.
-Compatibility outside these exact inputs is not asserted. Alpha.1 remains the
-latest owner-accepted release until the aggregate gate finishes.
+Compatibility outside these exact inputs is not asserted. Alpha.2 remains the
+latest published release until the 5.23 integration gate finishes.
 
 ## Visual scope
 
@@ -55,10 +54,16 @@ git clone --recurse-submodules \
   https://github.com/jan-guenter/bluemap-integrated-dynamics-addon.git
 ```
 
-For an existing checkout, run `git submodule update --init --recursive`. The
-build rejects an uninitialized, dirty, or incorrectly pinned toolkit
-submodule. Then use Java 21, Gradle 9.6.1, and the exact sibling BlueMap
-checkout:
+For an existing checkout, initialize both exact support modules:
+
+```bash
+git submodule update --init --recursive -- \
+  tooling/bluemap-addon-toolkit modules/bluemap-addon-adapter-api
+```
+
+The build rejects an uninitialized, dirty, incorrectly pinned, or
+source-tree-mismatched support module. Then use Java 21, Gradle 9.6.1, and the
+exact sibling BlueMap checkout:
 
 ```bash
 gradle --no-daemon clean check build \
@@ -66,8 +71,9 @@ gradle --no-daemon clean check build \
   generateMetadataFileForAddonPublication
 ```
 
-`check` rejects any production JAR that differs from the recorded size or
-SHA-256. Tagged releases publish the production/source JARs, POM, Gradle module
+`check` enforces the production and sources archive boundaries. Owner
+acceptance seals the exact release bytes before tagging. Tagged releases
+publish the production/source JARs, POM, Gradle module
 metadata, and checksums on GitHub Releases and Maven coordinates
 `io.github.jan-guenter:bluemap-integrated-dynamics-addon:<version>` on GitHub
 Packages. The tag must equal `v<addon_version>`.

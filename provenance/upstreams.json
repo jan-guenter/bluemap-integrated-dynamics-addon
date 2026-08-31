@@ -70,13 +70,43 @@
       }
     }
   },
+  "feature_backport_migration_candidate": {
+    "version": "0.1.0-alpha.3",
+    "date": "2026-08-31",
+    "status": "owner-accepted-release-candidate",
+    "tested_source_commit": "82f3bdece82cdc9ff223693733e948d63eabbf1f",
+    "tested_source_tree": "9508a9096b81363aee5a63a6d9f1dc37dcd6ba99",
+    "production_jar": {
+      "file_name": "bluemap-integrated-dynamics-addon-0.1.0-alpha.3.jar",
+      "size": 57598,
+      "sha256": "a82e8224360da54fab12d94a53408fb53e1f334c6e2b885e594cd50ed23ba828"
+    },
+    "sources_jar": {
+      "size": 26134,
+      "sha256": "8e53333752a1632e9e9cbf737206d40a5baf353276e5650d81cba71c6805cc93"
+    },
+    "gradle_9_6_1_candidate_gate": true,
+    "visual_behavior_changed": false
+  },
   "bluemap": {
-    "backport_version": "5.22-agent.backport-5.22-mc1.21.1-2",
-    "backport_commit": "9be321df995a1103808621d529eb72773e719d4d",
+    "backport_version": "5.22-feature.backport-5.23-stateless-java-web-server-46",
+    "backport_commit": "7e07f4e74ec1e92a6ead9aa1e66054af3e133aac",
     "api_commit": "285c9a60eff3ac2b0cab308ce1058d1565be0971",
-    "release_jar_sha256": "749f7647fa29764cea113114a7ab3259271bab3da22720989f2bd9fd1f3ba150",
+    "release_jar_size": 6545661,
+    "release_jar_sha256": "86a0323d24f472e425dda4d4e6bba2d7d8ce8315ad009930a67131128c715e62",
     "declared_license": "MIT",
     "bundled": false
+  },
+  "shared_adapter_api_module": {
+    "repository": "https://github.com/jan-guenter/bluemap-addon-adapter-api",
+    "version": "0.1.0-alpha.2",
+    "tag": "v0.1.0-alpha.2",
+    "commit": "e81f08bc4bfbf02d810ec8949a019130e2e61634",
+    "source_tree": "2f974c9bb2ba13888d69682f86f30f58922d30eb",
+    "integration": "exact gitlink-pinned sources compiled into the consumer",
+    "compiled_source_count": 4,
+    "declared_license": "MIT",
+    "artifact_bundled": false
   },
   "first_party_template": {
     "pipez": {
