@@ -19,6 +19,9 @@ project. It is a standalone public MIT BlueMap add-on, not a NeoForge mod.
   `abbc6e4e910572a88323856d153d16cc7909542c553b2be0d89b5c2aa7d77b32`.
 - Aggregate candidate `0.1.0-alpha.2`: 54,979 bytes, SHA-256
   `11fdae6eb18513d7d06bbca1973e2eded36ae12f30a69bd9e09af148f8e70f18`.
+- Owner-accepted BlueMap 5.23 candidate `0.1.0-alpha.3`: 57,598 bytes,
+  SHA-256
+  `a82e8224360da54fab12d94a53408fb53e1f334c6e2b885e594cd50ed23ba828`.
 
 Do not treat a matching version string as proof for another artifact or pack.
 

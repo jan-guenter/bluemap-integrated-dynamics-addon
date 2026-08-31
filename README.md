@@ -7,7 +7,7 @@ appearance of the Integrated Dynamics family.
 
 ## Status and compatibility
 
-Version `0.1.0-alpha.3` is an unpublished 5.23 migration candidate for this
+Version `0.1.0-alpha.3` is an owner-accepted 5.23 release candidate for this
 environment:
 
 - All the Mons `1.2.0`, Minecraft `1.21.1`, NeoForge `21.1.248`, Java `21`;

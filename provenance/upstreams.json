@@ -73,7 +73,7 @@
   "feature_backport_migration_candidate": {
     "version": "0.1.0-alpha.3",
     "date": "2026-08-31",
-    "status": "pending-combined-runtime-and-owner-acceptance",
+    "status": "owner-accepted-release-candidate",
     "tested_source_commit": "82f3bdece82cdc9ff223693733e948d63eabbf1f",
     "tested_source_tree": "9508a9096b81363aee5a63a6d9f1dc37dcd6ba99",
     "production_jar": {

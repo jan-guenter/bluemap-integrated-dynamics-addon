@@ -77,19 +77,19 @@ jobs:
           gradle --no-daemon \
             -PbluemapSourcePath=.ci/bluemap \
             clean check build generatePomFileForAddonPublication \
-            generateMetadataFileForAddonPublication
+            generateMetadataFileForAddonPublication verifyAcceptedProductionJar
           test "$(stat -c %s \
             "build/libs/bluemap-integrated-dynamics-addon-${VERSION}-sources.jar")" \
-            -eq 23916
+            -eq 26134
           test "$(stat -c %s build/publications/addon/pom-default.xml)" \
             -eq 1430
           test "$(stat -c %s build/publications/addon/module.json)" \
             -eq 2901
           sha256sum --check <<SHA256SUMS
-          11fdae6eb18513d7d06bbca1973e2eded36ae12f30a69bd9e09af148f8e70f18  build/libs/bluemap-integrated-dynamics-addon-${VERSION}.jar
-          8aca1d9e8b7bd79907daf3e92627bbe0788a2f384461c8a1cdc7d3319c8dc95b  build/libs/bluemap-integrated-dynamics-addon-${VERSION}-sources.jar
-          acb19314d78f399cc80847a8a441c5dcd93e937aed089113d97d34486fd8d127  build/publications/addon/pom-default.xml
-          a828ee0c44390caf2548cbc099775f28b4497c08f637136bbf4b0b75dbc06b4c  build/publications/addon/module.json
+          a82e8224360da54fab12d94a53408fb53e1f334c6e2b885e594cd50ed23ba828  build/libs/bluemap-integrated-dynamics-addon-${VERSION}.jar
+          8e53333752a1632e9e9cbf737206d40a5baf353276e5650d81cba71c6805cc93  build/libs/bluemap-integrated-dynamics-addon-${VERSION}-sources.jar
+          a2e3d24179054aaa475fa80bacfec23744f0af435e8ef37dc859b06ad6dc1c6d  build/publications/addon/pom-default.xml
+          cf3b05849921a1306c85cb7e8e28ecf04f29e7ad0afeb02071cf6192d4140aee  build/publications/addon/module.json
           SHA256SUMS
 
       - name: Prepare release bundle
@@ -105,7 +105,7 @@ jobs:
           (cd release && sha256sum --check SHA256SUMS)
           test "$(stat -c %s release/SHA256SUMS)" -eq 496
           test "$(sha256sum release/SHA256SUMS | cut -d ' ' -f 1)" = \
-            4523f4e08409da4e58c94aa8dad0c795c0151afc2d2b8b9b55697375e9288e34
+            a7730ae3d30ff86ae56858d39fc1357a3b548dce663961c33ddb11c2627c2910
 
       - name: Create or refresh draft release
         env:
