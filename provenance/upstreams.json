@@ -92,7 +92,7 @@
   "render_core_migration_candidate": {
     "version": "0.1.0-alpha.4",
     "date": "2026-09-02",
-    "status": "sealed-automated-parity-release-candidate",
+    "status": "owner-accepted-release-candidate",
     "baseline_release": {
       "version": "0.1.0-alpha.3",
       "commit": "ce881ea468f5038e8e05b81c01f84df48ce747b6",
