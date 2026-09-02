@@ -28,6 +28,9 @@ fallbacks, routes, and gallery bytes are unchanged. Compatibility outside
 these exact inputs is not asserted. Alpha.3 remains the latest published
 release until this maintenance candidate passes review.
 
+The candidate production JAR is exactly 58,352 bytes with SHA-256
+`d6dcf7682244189d653708310b0a86d89d236f5be9f38d6f99f06371aa6e88f0`.
+
 ## Visual scope
 
 The add-on renders stable structure that BlueMap cannot derive from the normal

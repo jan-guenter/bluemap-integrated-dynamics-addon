@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "status": "unsealed-automated-parity-candidate",
+  "status": "sealed-automated-parity-release-candidate",
   "published": false,
   "version": "0.1.0-alpha.4",
   "release_date": "2026-09-02",
@@ -19,23 +19,28 @@
   "candidate_artifacts": {
     "production_jar": {
       "file_name": "bluemap-integrated-dynamics-addon-0.1.0-alpha.4.jar",
-      "size": 0,
-      "sha256": "PENDING"
+      "size": 58352,
+      "sha256": "d6dcf7682244189d653708310b0a86d89d236f5be9f38d6f99f06371aa6e88f0"
     },
     "sources_jar": {
       "file_name": "bluemap-integrated-dynamics-addon-0.1.0-alpha.4-sources.jar",
-      "size": 0,
-      "sha256": "PENDING"
+      "size": 26909,
+      "sha256": "158fd3cc102f578fb591d13992099b9d11cb6837cd35b0491ee7c6dbc114b4e2"
     },
     "pom": {
       "file_name": "bluemap-integrated-dynamics-addon-0.1.0-alpha.4.pom",
-      "size": 0,
-      "sha256": "PENDING"
+      "size": 1430,
+      "sha256": "e38ff76534e1ca8151c6ae98c8e424960690d3d09f18da71beed4bc7a510ec90"
     },
     "gradle_module": {
       "file_name": "bluemap-integrated-dynamics-addon-0.1.0-alpha.4.module.json",
-      "size": 0,
-      "sha256": "PENDING"
+      "size": 2901,
+      "sha256": "3d4c6ac9090c6bcb83431258791842a9c3521d00eb10d23b718bc287d6fe8ab3"
+    },
+    "sha256sums": {
+      "file_name": "SHA256SUMS",
+      "size": 496,
+      "sha256": "8bbc7bc99c2e0aed3feaa26e3f9bc8d8525ef2f8b18f52d9413b00409a38b26d"
     }
   },
   "render_core_migration": {
@@ -67,11 +72,27 @@
   "parity_evidence": {
     "baseline_local_source_sha256": "cf23c99b86cf9771f433f9a64bb6b99bbd9bfbf79a7dc0fc651775cf06da3427",
     "package_and_access_normalized_source_sha256": "9c835eb4b65891f2bb6dddf517a0fdc102e5f53791ae9f5cf8a03db3693a8510",
-    "package_normalized_bytecode_sha256": "PENDING",
+    "package_normalized_bytecode_sha256": "281af1188f970ebd486d8b9158acc684a84b08b365ab180980b0ad7f0dc1ad18",
     "gallery_tree": "1c0e48e9f8289fdfe090bf70990346d99a57cece",
     "gallery_file_manifest_sha256": "f6877e718402b0a18009342dfde2e033055df22d8043399f68ed6932b7e8c195",
     "gallery_sources_changed": false,
-    "runtime_profile_and_renderer_behavior_changed": false
+    "runtime_profile_and_renderer_behavior_changed": false,
+    "production_archive": {
+      "old_entries": 35,
+      "new_entries": 35,
+      "unchanged_entries": 29,
+      "changed_common_entries": 4,
+      "removed_local_face_lighting_classes": 2,
+      "added_shared_face_lighting_classes": 2
+    },
+    "sources_archive": {
+      "old_entries": 24,
+      "new_entries": 24,
+      "unchanged_entries": 21,
+      "changed_common_entries": 2,
+      "removed_local_face_lighting_sources": 1,
+      "added_shared_face_lighting_sources": 1
+    }
   },
   "preserved_contract": {
     "routed_part_count": 48,
@@ -80,16 +101,21 @@
     "renderer_registration_changed": false
   },
   "verification": {
-    "production_archive_boundary_gate": false,
-    "sources_archive_boundary_gate": false,
-    "render_core_source_boundary_gate": false,
-    "adapter_api_source_boundary_gate": false,
-    "exact_feature_backport_runtime_identity_gate": false,
-    "gradle_9_6_1_clean_build": false,
-    "consumer_tests_passed": 0,
-    "checkstyle": false,
-    "accepted_production_identity_gate": false,
-    "release_workflow_asset_identity_updated": false,
-    "actionlint": false
+    "production_archive_boundary_gate": true,
+    "sources_archive_boundary_gate": true,
+    "render_core_source_boundary_gate": true,
+    "adapter_api_source_boundary_gate": true,
+    "exact_feature_backport_runtime_identity_gate": true,
+    "gradle_9_6_1_clean_build": true,
+    "consumer_tests_passed": 7,
+    "checkstyle": true,
+    "accepted_production_identity_gate": true,
+    "release_workflow_asset_identity_updated": true,
+    "actionlint": true,
+    "render_core_trust_probes": [
+      "missing-checkout",
+      "wrong-head",
+      "dirty-worktree"
+    ]
   }
 }

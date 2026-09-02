@@ -80,16 +80,16 @@ jobs:
             generateMetadataFileForAddonPublication verifyAcceptedProductionJar
           test "$(stat -c %s \
             "build/libs/bluemap-integrated-dynamics-addon-${VERSION}-sources.jar")" \
-            -eq 26134
+            -eq 26909
           test "$(stat -c %s build/publications/addon/pom-default.xml)" \
             -eq 1430
           test "$(stat -c %s build/publications/addon/module.json)" \
             -eq 2901
           sha256sum --check <<SHA256SUMS
-          a82e8224360da54fab12d94a53408fb53e1f334c6e2b885e594cd50ed23ba828  build/libs/bluemap-integrated-dynamics-addon-${VERSION}.jar
-          8e53333752a1632e9e9cbf737206d40a5baf353276e5650d81cba71c6805cc93  build/libs/bluemap-integrated-dynamics-addon-${VERSION}-sources.jar
-          a2e3d24179054aaa475fa80bacfec23744f0af435e8ef37dc859b06ad6dc1c6d  build/publications/addon/pom-default.xml
-          cf3b05849921a1306c85cb7e8e28ecf04f29e7ad0afeb02071cf6192d4140aee  build/publications/addon/module.json
+          d6dcf7682244189d653708310b0a86d89d236f5be9f38d6f99f06371aa6e88f0  build/libs/bluemap-integrated-dynamics-addon-${VERSION}.jar
+          158fd3cc102f578fb591d13992099b9d11cb6837cd35b0491ee7c6dbc114b4e2  build/libs/bluemap-integrated-dynamics-addon-${VERSION}-sources.jar
+          e38ff76534e1ca8151c6ae98c8e424960690d3d09f18da71beed4bc7a510ec90  build/publications/addon/pom-default.xml
+          3d4c6ac9090c6bcb83431258791842a9c3521d00eb10d23b718bc287d6fe8ab3  build/publications/addon/module.json
           SHA256SUMS
 
       - name: Prepare release bundle
@@ -105,7 +105,7 @@ jobs:
           (cd release && sha256sum --check SHA256SUMS)
           test "$(stat -c %s release/SHA256SUMS)" -eq 496
           test "$(sha256sum release/SHA256SUMS | cut -d ' ' -f 1)" = \
-            a7730ae3d30ff86ae56858d39fc1357a3b548dce663961c33ddb11c2627c2910
+            8bbc7bc99c2e0aed3feaa26e3f9bc8d8525ef2f8b18f52d9413b00409a38b26d
 
       - name: Create or refresh draft release
         env:

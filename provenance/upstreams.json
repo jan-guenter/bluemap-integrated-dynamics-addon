@@ -92,7 +92,7 @@
   "render_core_migration_candidate": {
     "version": "0.1.0-alpha.4",
     "date": "2026-09-02",
-    "status": "automated-parity-release-candidate",
+    "status": "sealed-automated-parity-release-candidate",
     "baseline_release": {
       "version": "0.1.0-alpha.3",
       "commit": "ce881ea468f5038e8e05b81c01f84df48ce747b6",
@@ -101,6 +101,16 @@
     },
     "local_face_lighting_sha256": "cf23c99b86cf9771f433f9a64bb6b99bbd9bfbf79a7dc0fc651775cf06da3427",
     "package_and_access_normalized_source_sha256": "9c835eb4b65891f2bb6dddf517a0fdc102e5f53791ae9f5cf8a03db3693a8510",
+    "package_normalized_bytecode_sha256": "281af1188f970ebd486d8b9158acc684a84b08b365ab180980b0ad7f0dc1ad18",
+    "production_jar": {
+      "file_name": "bluemap-integrated-dynamics-addon-0.1.0-alpha.4.jar",
+      "size": 58352,
+      "sha256": "d6dcf7682244189d653708310b0a86d89d236f5be9f38d6f99f06371aa6e88f0"
+    },
+    "sources_jar": {
+      "size": 26909,
+      "sha256": "158fd3cc102f578fb591d13992099b9d11cb6837cd35b0491ee7c6dbc114b4e2"
+    },
     "gallery_sources_changed": false,
     "renderer_behavior_changed": false
   },

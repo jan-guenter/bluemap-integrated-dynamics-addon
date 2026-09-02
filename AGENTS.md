@@ -25,9 +25,10 @@ project. It is a standalone public MIT BlueMap add-on, not a NeoForge mod.
 - Owner-accepted BlueMap 5.23 release `0.1.0-alpha.3`: 57,598 bytes,
   SHA-256
   `a82e8224360da54fab12d94a53408fb53e1f334c6e2b885e594cd50ed23ba828`.
-- Render-core source migration candidate `0.1.0-alpha.4` preserves the alpha.3
-  gallery and renderer behavior. Its exact artifact identity is recorded in
-  `provenance/release.json`.
+- Render-core source migration candidate `0.1.0-alpha.4`: 58,352 bytes,
+  SHA-256
+  `d6dcf7682244189d653708310b0a86d89d236f5be9f38d6f99f06371aa6e88f0`.
+  It preserves the alpha.3 gallery and renderer behavior.
 
 Do not treat a matching version string as proof for another artifact or pack.
 
