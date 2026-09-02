@@ -15,6 +15,7 @@ base {
 }
 
 sourceSets {
+    main.java.srcDir 'modules/bluemap-addon-render-core/src/main/java'
     main.java.srcDir 'modules/bluemap-addon-adapter-api/src/main/java'
 }
 
@@ -52,6 +53,16 @@ tasks.named('jar', Jar).configure {
 
 def productionJar = tasks.named('jar', Jar).flatMap { it.archiveFile }
 def publishedSourcesJar = tasks.named('sourcesJar', Jar).flatMap { it.archiveFile }
+def sharedRenderCoreRoot =
+        'io/github/janguenter/bluemap/addon/render/core/adapter/'
+def sharedRenderCorePackage = "${sharedRenderCoreRoot}bluemap523/"
+def sharedRenderCoreClasses = [
+        "${sharedRenderCorePackage}FaceLighting.class",
+        "${sharedRenderCorePackage}FaceLighting\$Sample.class"
+].collect { it.toString() }
+def sharedRenderCoreSources = [
+        "${sharedRenderCorePackage}FaceLighting.java"
+].collect { it.toString() }
 def sharedAdapterApiPackage =
         'io/github/janguenter/bluemap/addon/adapter/api/bluemap523/'
 def sharedAdapterApiClasses = [
@@ -72,6 +83,8 @@ def displacedAdapterHelpers = [
         'io/github/janguenter/bluemap/integrateddynamics/adapter/bluemap523/AdapterCompatibility',
         'io/github/janguenter/bluemap/integrateddynamics/adapter/bluemap523/IntegratedDynamicsResourceExtensionType'
 ]
+def legacyLocalFaceLighting =
+        'io/github/janguenter/bluemap/integrateddynamics/adapter/bluemap523/FaceLighting'
 
 tasks.register('verifyProductionJar') {
     dependsOn tasks.named('jar')
@@ -85,14 +98,18 @@ tasks.register('verifyProductionJar') {
                     'io/github/janguenter/bluemap/integrateddynamics/BlueMapIntegratedDynamicsAddon.class',
                     'META-INF/LICENSE-bluemap-integrated-dynamics-addon'
             ]
+            required.addAll(sharedRenderCoreClasses)
             required.addAll(sharedAdapterApiClasses)
             def missing = required.findAll { !entries.contains(it) }
-            def nonUniqueShared = sharedAdapterApiClasses.findAll { shared ->
+            def nonUniqueShared = sharedRenderCoreClasses.findAll { shared ->
+                entries.count { it == shared } != 1
+            } + sharedAdapterApiClasses.findAll { shared ->
                 entries.count { it == shared } != 1
             }
             def foreignClasses = entries.findAll { entry ->
                 entry.endsWith('.class')
                         && !entry.startsWith('io/github/janguenter/bluemap/integrateddynamics/')
+                        && !sharedRenderCoreClasses.contains(entry)
                         && !sharedAdapterApiClasses.contains(entry)
             }
             def forbidden = entries.findAll { entry ->
@@ -105,6 +122,9 @@ tasks.register('verifyProductionJar') {
                         || entry.startsWith('gallery/')
                         || entry.startsWith(legacyLocalAdapterPackage)
                         || displacedAdapterHelpers.any { helper -> entry.startsWith(helper) }
+                        || entry.startsWith(legacyLocalFaceLighting)
+                        || (entry.startsWith(sharedRenderCoreRoot)
+                            && !sharedRenderCoreClasses.contains(entry))
                         || (entry.startsWith(sharedAdapterApiPackage)
                             && !sharedAdapterApiClasses.contains(entry))
             }
@@ -133,14 +153,18 @@ tasks.register('verifySourcesJar') {
                     'io/github/janguenter/bluemap/integrateddynamics/BlueMapIntegratedDynamicsAddon.java',
                     'bluemap.addon.json'
             ]
+            required.addAll(sharedRenderCoreSources)
             required.addAll(sharedAdapterApiSources)
             def missing = required.findAll { !entries.contains(it) }
-            def nonUniqueShared = sharedAdapterApiSources.findAll { shared ->
+            def nonUniqueShared = sharedRenderCoreSources.findAll { shared ->
+                entries.count { it == shared } != 1
+            } + sharedAdapterApiSources.findAll { shared ->
                 entries.count { it == shared } != 1
             }
             def foreignJava = entries.findAll { entry ->
                 entry.endsWith('.java')
                         && !entry.startsWith('io/github/janguenter/bluemap/integrateddynamics/')
+                        && !sharedRenderCoreSources.contains(entry)
                         && !sharedAdapterApiSources.contains(entry)
             }
             def forbidden = entries.findAll { entry ->
@@ -148,6 +172,9 @@ tasks.register('verifySourcesJar') {
                         || entry.endsWith('.jar')
                         || entry.startsWith(legacyLocalAdapterPackage)
                         || displacedAdapterHelpers.any { helper -> entry == "${helper}.java" }
+                        || entry == "${legacyLocalFaceLighting}.java"
+                        || (entry.startsWith(sharedRenderCoreRoot)
+                            && !sharedRenderCoreSources.contains(entry))
                         || (entry.startsWith(sharedAdapterApiPackage)
                             && !sharedAdapterApiSources.contains(entry))
             }

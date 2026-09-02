@@ -10,6 +10,9 @@ project. It is a standalone public MIT BlueMap add-on, not a NeoForge mod.
   `5.22-feature.backport-5.23-stateless-java-web-server-46` at commit
   `7e07f4e74ec1e92a6ead9aa1e66054af3e133aac`; API commit
   `285c9a60eff3ac2b0cab308ce1058d1565be0971`.
+- Render core `0.1.0-alpha.2` at commit
+  `24b84efdc8235f3f1323e1a8e9fd033080e3a79e`, source tree
+  `424040931680fb82d37693f893ca887c0ed48eae`.
 - Adapter API `0.1.0-alpha.2` at commit
   `e81f08bc4bfbf02d810ec8949a019130e2e61634`, source tree
   `2f974c9bb2ba13888d69682f86f30f58922d30eb`.
@@ -19,9 +22,12 @@ project. It is a standalone public MIT BlueMap add-on, not a NeoForge mod.
   `abbc6e4e910572a88323856d153d16cc7909542c553b2be0d89b5c2aa7d77b32`.
 - Aggregate candidate `0.1.0-alpha.2`: 54,979 bytes, SHA-256
   `11fdae6eb18513d7d06bbca1973e2eded36ae12f30a69bd9e09af148f8e70f18`.
-- Owner-accepted BlueMap 5.23 candidate `0.1.0-alpha.3`: 57,598 bytes,
+- Owner-accepted BlueMap 5.23 release `0.1.0-alpha.3`: 57,598 bytes,
   SHA-256
   `a82e8224360da54fab12d94a53408fb53e1f334c6e2b885e594cd50ed23ba828`.
+- Render-core source migration candidate `0.1.0-alpha.4` preserves the alpha.3
+  gallery and renderer behavior. Its exact artifact identity is recorded in
+  `provenance/release.json`.
 
 Do not treat a matching version string as proof for another artifact or pack.
 
@@ -40,17 +46,18 @@ Do not treat a matching version string as proof for another artifact or pack.
 
 ## Validation and release
 
-Initialize both support modules, then run the migration candidate gate:
+Initialize all support modules, then run the migration candidate gate:
 
 ```bash
 git submodule update --init --recursive -- \
-  tooling/bluemap-addon-toolkit modules/bluemap-addon-adapter-api
+  tooling/bluemap-addon-toolkit modules/bluemap-addon-render-core \
+  modules/bluemap-addon-adapter-api
 gradle --no-daemon clean check build \
   generatePomFileForAddonPublication \
   generateMetadataFileForAddonPublication
 ```
 
 Release tags must equal `v<addon_version>`. `check` enforces archive and shared
-adapter boundaries; the accepted production identity is sealed only after
-owner visual acceptance. Never claim another runtime, publication, or pack
-version without observing it directly.
+source boundaries. The accepted production identity must be sealed before a
+tag. Never claim another runtime, publication, or pack version without
+observing it directly.

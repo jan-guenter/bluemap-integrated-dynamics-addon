@@ -7,7 +7,7 @@ appearance of the Integrated Dynamics family.
 
 ## Status and compatibility
 
-Version `0.1.0-alpha.3` is an owner-accepted 5.23 release candidate for this
+Version `0.1.0-alpha.4` is the render-core source migration candidate for this
 environment:
 
 - All the Mons `1.2.0`, Minecraft `1.21.1`, NeoForge `21.1.248`, Java `21`;
@@ -17,11 +17,16 @@ environment:
 - Integrated Dynamics `1.34.0`, Tunnels `1.9.4-652`, Terminals `1.7.0-800`,
   Crafting `1.4.6-605`, and Scripting `1.0.24-424`.
 
-It preserves the accepted alpha.1 rendering and the alpha.2 first-wins fallback for
-the installed cable texture when malformed animation metadata elsewhere in the
-same JAR aborts BlueMap's texture pass before that key.
-Compatibility outside these exact inputs is not asserted. Alpha.2 remains the
-latest published release until the 5.23 integration gate finishes.
+It preserves the released alpha.3 renderer and the alpha.2 first-wins fallback
+for the installed cable texture when malformed animation metadata elsewhere in
+the same JAR aborts BlueMap's texture pass before that key. The exact
+`FaceLighting` implementation now compiles from
+`bluemap-addon-render-core` `0.1.0-alpha.2`, commit
+`24b84efdc8235f3f1323e1a8e9fd033080e3a79e`, source tree
+`424040931680fb82d37693f893ca887c0ed48eae`. Emitters, model selection,
+fallbacks, routes, and gallery bytes are unchanged. Compatibility outside
+these exact inputs is not asserted. Alpha.3 remains the latest published
+release until this maintenance candidate passes review.
 
 ## Visual scope
 
@@ -54,11 +59,12 @@ git clone --recurse-submodules \
   https://github.com/jan-guenter/bluemap-integrated-dynamics-addon.git
 ```
 
-For an existing checkout, initialize both exact support modules:
+For an existing checkout, initialize all exact support modules:
 
 ```bash
 git submodule update --init --recursive -- \
-  tooling/bluemap-addon-toolkit modules/bluemap-addon-adapter-api
+  tooling/bluemap-addon-toolkit modules/bluemap-addon-render-core \
+  modules/bluemap-addon-adapter-api
 ```
 
 The build rejects an uninitialized, dirty, incorrectly pinned, or
@@ -71,9 +77,10 @@ gradle --no-daemon clean check build \
   generateMetadataFileForAddonPublication
 ```
 
-`check` enforces the production and sources archive boundaries. Owner
-acceptance seals the exact release bytes before tagging. Tagged releases
-publish the production/source JARs, POM, Gradle module
+`check` enforces the production and sources archive boundaries, including one
+exact shared face-light source and no legacy local copy. The release process
+seals the exact bytes before tagging. Tagged releases publish the
+production/source JARs, POM, Gradle module
 metadata, and checksums on GitHub Releases and Maven coordinates
 `io.github.jan-guenter:bluemap-integrated-dynamics-addon:<version>` on GitHub
 Packages. The tag must equal `v<addon_version>`.

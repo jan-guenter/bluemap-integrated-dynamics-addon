@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "project_license": "MIT",
-  "implementation_lane": "independent-runtime-interface-resource-and-persisted-state-adapter",
+  "implementation_lane": "commit-pinned-render-core-and-adapter-sources-with-local-runtime-resource-and-persisted-state-adapter",
   "baseline": {
     "pack": "All the Mons 1.2.0",
     "pack_commit": "c7bb230f21d14d26859d0b92548f089b3a493ad9",
@@ -70,10 +70,11 @@
       }
     }
   },
-  "feature_backport_migration_candidate": {
+  "feature_backport_release": {
     "version": "0.1.0-alpha.3",
     "date": "2026-08-31",
-    "status": "owner-accepted-release-candidate",
+    "status": "published",
+    "release_commit": "ce881ea468f5038e8e05b81c01f84df48ce747b6",
     "tested_source_commit": "82f3bdece82cdc9ff223693733e948d63eabbf1f",
     "tested_source_tree": "9508a9096b81363aee5a63a6d9f1dc37dcd6ba99",
     "production_jar": {
@@ -88,6 +89,21 @@
     "gradle_9_6_1_candidate_gate": true,
     "visual_behavior_changed": false
   },
+  "render_core_migration_candidate": {
+    "version": "0.1.0-alpha.4",
+    "date": "2026-09-02",
+    "status": "automated-parity-release-candidate",
+    "baseline_release": {
+      "version": "0.1.0-alpha.3",
+      "commit": "ce881ea468f5038e8e05b81c01f84df48ce747b6",
+      "production_jar_size": 57598,
+      "production_jar_sha256": "a82e8224360da54fab12d94a53408fb53e1f334c6e2b885e594cd50ed23ba828"
+    },
+    "local_face_lighting_sha256": "cf23c99b86cf9771f433f9a64bb6b99bbd9bfbf79a7dc0fc651775cf06da3427",
+    "package_and_access_normalized_source_sha256": "9c835eb4b65891f2bb6dddf517a0fdc102e5f53791ae9f5cf8a03db3693a8510",
+    "gallery_sources_changed": false,
+    "renderer_behavior_changed": false
+  },
   "bluemap": {
     "backport_version": "5.22-feature.backport-5.23-stateless-java-web-server-46",
     "backport_commit": "7e07f4e74ec1e92a6ead9aa1e66054af3e133aac",
@@ -96,6 +112,17 @@
     "release_jar_sha256": "86a0323d24f472e425dda4d4e6bba2d7d8ce8315ad009930a67131128c715e62",
     "declared_license": "MIT",
     "bundled": false
+  },
+  "shared_render_core_module": {
+    "repository": "https://github.com/jan-guenter/bluemap-addon-render-core",
+    "version": "0.1.0-alpha.2",
+    "tag": "v0.1.0-alpha.2",
+    "commit": "24b84efdc8235f3f1323e1a8e9fd033080e3a79e",
+    "source_tree": "424040931680fb82d37693f893ca887c0ed48eae",
+    "integration": "exact gitlink-pinned source compiled into the consumer",
+    "compiled_source_count": 1,
+    "declared_license": "MIT",
+    "artifact_bundled": false
   },
   "shared_adapter_api_module": {
     "repository": "https://github.com/jan-guenter/bluemap-addon-adapter-api",
