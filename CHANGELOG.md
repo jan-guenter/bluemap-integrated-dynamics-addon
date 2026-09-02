@@ -1,5 +1,15 @@
 # Changelog
 
+## 0.1.0-alpha.4 - 2026-09-02
+
+- Pin `bluemap-addon-render-core` `0.1.0-alpha.2` and compile its BlueMap 5.23
+  `FaceLighting` source instead of the local duplicate.
+- Preserve the released cable, mounted-part, facade, texture-fallback, route,
+  and gallery behavior.
+- Reject a missing, changed, dirty, incorrectly pinned, or source-tree-mismatched
+  render-core checkout and reject legacy or unexpected shared classes in both
+  publication JARs.
+
 ## 0.1.0-alpha.3 - 2026-08-31
 
 - Target only BlueMap feature-backport commit

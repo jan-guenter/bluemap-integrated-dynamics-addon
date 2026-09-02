@@ -1,134 +1,117 @@
 {
   "schema_version": 1,
   "status": "owner-accepted-release-candidate",
-  "published": false,
-  "version": "0.1.0-alpha.3",
-  "release_date": "2026-08-31",
+  "version": "0.1.0-alpha.4",
+  "release_date": "2026-09-02",
   "repository": "https://github.com/jan-guenter/bluemap-integrated-dynamics-addon",
-  "tag": "v0.1.0-alpha.3",
-  "maven_coordinate": "io.github.jan-guenter:bluemap-integrated-dynamics-addon:0.1.0-alpha.3",
-  "candidate_artifacts": {
-    "production_jar": {
-      "file_name": "bluemap-integrated-dynamics-addon-0.1.0-alpha.3.jar",
-      "size": 57598,
-      "sha256": "a82e8224360da54fab12d94a53408fb53e1f334c6e2b885e594cd50ed23ba828"
-    },
-    "sources_jar": {
-      "file_name": "bluemap-integrated-dynamics-addon-0.1.0-alpha.3-sources.jar",
-      "size": 26134,
-      "sha256": "8e53333752a1632e9e9cbf737206d40a5baf353276e5650d81cba71c6805cc93"
-    },
-    "pom": {
-      "file_name": "bluemap-integrated-dynamics-addon-0.1.0-alpha.3.pom",
-      "size": 1430,
-      "sha256": "a2e3d24179054aaa475fa80bacfec23744f0af435e8ef37dc859b06ad6dc1c6d"
-    },
-    "gradle_module": {
-      "file_name": "bluemap-integrated-dynamics-addon-0.1.0-alpha.3.module.json",
-      "size": 2901,
-      "sha256": "cf3b05849921a1306c85cb7e8e28ecf04f29e7ad0afeb02071cf6192d4140aee"
-    }
-  },
+  "tag": "v0.1.0-alpha.4",
+  "maven_coordinate": "io.github.jan-guenter:bluemap-integrated-dynamics-addon:0.1.0-alpha.4",
   "baseline_release": {
-    "version": "0.1.0-alpha.2",
-    "tag": "v0.1.0-alpha.2",
-    "commit": "f6f0d7c89563aa63f27970c898fda4cc720cc32f",
-    "production_jar_size": 54979,
-    "production_jar_sha256": "11fdae6eb18513d7d06bbca1973e2eded36ae12f30a69bd9e09af148f8e70f18",
+    "version": "0.1.0-alpha.3",
+    "tag": "v0.1.0-alpha.3",
+    "commit": "ce881ea468f5038e8e05b81c01f84df48ce747b6",
+    "source_tree": "5867adf41b729989386f800a5b0709f727e8faed",
+    "production_jar_size": 57598,
+    "production_jar_sha256": "a82e8224360da54fab12d94a53408fb53e1f334c6e2b885e594cd50ed23ba828",
     "owner_visual_acceptance": true
   },
-  "adapter_api_migration": {
-    "repository": "https://github.com/jan-guenter/bluemap-addon-adapter-api",
-    "version": "0.1.0-alpha.2",
-    "tag": "v0.1.0-alpha.2",
-    "release_target_commit": "e81f08bc4bfbf02d810ec8949a019130e2e61634",
-    "source_tree": "2f974c9bb2ba13888d69682f86f30f58922d30eb",
-    "target_bluemap_version": "5.22-feature.backport-5.23-stateless-java-web-server-46",
+  "final_release_artifacts": {
+    "production_jar": {
+      "file_name": "bluemap-integrated-dynamics-addon-0.1.0-alpha.4.jar",
+      "size": 58352,
+      "sha256": "d6dcf7682244189d653708310b0a86d89d236f5be9f38d6f99f06371aa6e88f0"
+    },
+    "sources_jar": {
+      "file_name": "bluemap-integrated-dynamics-addon-0.1.0-alpha.4-sources.jar",
+      "size": 26909,
+      "sha256": "158fd3cc102f578fb591d13992099b9d11cb6837cd35b0491ee7c6dbc114b4e2"
+    },
+    "pom": {
+      "file_name": "bluemap-integrated-dynamics-addon-0.1.0-alpha.4.pom",
+      "size": 1430,
+      "sha256": "e38ff76534e1ca8151c6ae98c8e424960690d3d09f18da71beed4bc7a510ec90"
+    },
+    "gradle_module": {
+      "file_name": "bluemap-integrated-dynamics-addon-0.1.0-alpha.4.module.json",
+      "size": 2901,
+      "sha256": "3d4c6ac9090c6bcb83431258791842a9c3521d00eb10d23b718bc287d6fe8ab3"
+    },
+    "sha256sums": {
+      "file_name": "SHA256SUMS",
+      "size": 496,
+      "sha256": "8bbc7bc99c2e0aed3feaa26e3f9bc8d8525ef2f8b18f52d9413b00409a38b26d"
+    }
+  },
+  "render_core_523_migration": {
+    "module_repository": "https://github.com/jan-guenter/bluemap-addon-render-core",
+    "module_version": "0.1.0-alpha.2",
+    "module_tag": "v0.1.0-alpha.2",
+    "module_release_commit": "24b84efdc8235f3f1323e1a8e9fd033080e3a79e",
+    "module_source_tree": "424040931680fb82d37693f893ca887c0ed48eae",
     "bluemap_commit": "7e07f4e74ec1e92a6ead9aa1e66054af3e133aac",
     "bluemap_api_commit": "285c9a60eff3ac2b0cab308ce1058d1565be0971",
+    "compiled_source_count": 1,
+    "source_package": "io.github.janguenter.bluemap.addon.render.core.adapter.bluemap523",
+    "standalone_module_jar_bundled": false,
+    "standalone_module_jar_installed": false
+  },
+  "adapter_api_source": {
+    "module_repository": "https://github.com/jan-guenter/bluemap-addon-adapter-api",
+    "module_version": "0.1.0-alpha.2",
+    "module_tag": "v0.1.0-alpha.2",
+    "module_release_commit": "e81f08bc4bfbf02d810ec8949a019130e2e61634",
+    "module_source_tree": "2f974c9bb2ba13888d69682f86f30f58922d30eb",
     "compiled_source_count": 4,
     "standalone_module_jar_bundled": false,
-    "standalone_module_jar_nested": false,
-    "standalone_module_jar_installed": false,
-    "local_adapter_package": "io.github.janguenter.bluemap.integrateddynamics.adapter.bluemap523",
-    "displaced_local_helpers": [
-      "AdapterCompatibility",
-      "inline registry admission methods",
-      "IntegratedDynamicsResourceExtensionType"
-    ]
+    "standalone_module_jar_installed": false
+  },
+  "parity_evidence": {
+    "baseline_local_source_sha256": "cf23c99b86cf9771f433f9a64bb6b99bbd9bfbf79a7dc0fc651775cf06da3427",
+    "package_and_access_normalized_source_sha256": "9c835eb4b65891f2bb6dddf517a0fdc102e5f53791ae9f5cf8a03db3693a8510",
+    "package_normalized_bytecode_sha256": "281af1188f970ebd486d8b9158acc684a84b08b365ab180980b0ad7f0dc1ad18",
+    "gallery_tree": "1c0e48e9f8289fdfe090bf70990346d99a57cece",
+    "gallery_file_manifest_sha256": "f6877e718402b0a18009342dfde2e033055df22d8043399f68ed6932b7e8c195",
+    "gallery_sources_changed": false,
+    "runtime_profile_and_renderer_behavior_changed": false,
+    "production_archive": {
+      "old_entries": 35,
+      "new_entries": 35,
+      "unchanged_entries": 29,
+      "changed_common_entries": 4,
+      "removed_local_face_lighting_classes": 2,
+      "added_shared_face_lighting_classes": 2
+    },
+    "sources_archive": {
+      "old_entries": 24,
+      "new_entries": 24,
+      "unchanged_entries": 21,
+      "changed_common_entries": 2,
+      "removed_local_face_lighting_sources": 1,
+      "added_shared_face_lighting_sources": 1
+    }
   },
   "preserved_contract": {
     "routed_part_count": 48,
     "gallery_assertion_count": 6,
-    "gallery_sources_changed": false,
-    "runtime_profile_and_renderer_behavior_changed": false,
-    "installed_cable_texture_fallback_changed": false
+    "installed_cable_texture_fallback_changed": false,
+    "renderer_registration_changed": false
   },
   "verification": {
     "production_archive_boundary_gate": true,
     "sources_archive_boundary_gate": true,
+    "render_core_source_boundary_gate": true,
+    "adapter_api_source_boundary_gate": true,
     "exact_feature_backport_runtime_identity_gate": true,
     "gradle_9_6_1_clean_build": true,
-    "consumer_tests_passed": 3,
+    "consumer_tests_passed": 7,
     "checkstyle": true,
     "accepted_production_identity_gate": true,
     "release_workflow_asset_identity_updated": true,
-    "actionlint": true
-  },
-  "owner_accepted_staging": {
-    "visual_acceptance": true,
-    "accepted_on": "2026-08-31",
-    "scope": "Owner accepted the five-gallery aggregate batch containing Integrated Dynamics cables, mounted parts, and persisted facades.",
-    "integration_run": "bluemap-atmons-integration-20260831-tech-batch-523-native",
-    "candidate_manifest": {
-      "sha256": "5b42eb108509c0c497c29c933d2a6a242a6a9b2f602957d258c90fb29e2a4c8c",
-      "local_candidate_base_source_commit": "9c1ac061cd03f1f863fe35a94398118a1037794d",
-      "local_candidate_base_artifact": {
-        "file_name": "bluemap-integrated-dynamics-addon-0.1.0-alpha.3.jar",
-        "size": 57598,
-        "sha256": "a82e8224360da54fab12d94a53408fb53e1f334c6e2b885e594cd50ed23ba828"
-      },
-      "aggregate_staging_artifact": {
-        "file_name": "bluemap-integrated-dynamics-addon-0.1.0-alpha.2.jar",
-        "size": 57650,
-        "sha256": "f3765f659b762f1e7e33a5bf4eaafb614b1ea56a2efd000753f96132a8225691"
-      }
-    },
-    "gallery_render": {
-      "map_id": "atmons_integration",
-      "composition_id": "4c1139e67bee1f570824ac90bdc12a4331381946acf4cd593609c51c3a4c894a",
-      "layout_sha256": "5ea9a96c5e5b159057441a6eb6fbfdbf47aa06b95dadfcb2756246b117a04944",
-      "fresh_tile_evidence_sha256": "a9d997a033aa422cab225fbf058a25a4011e06c25889121770f9378edba0c69b",
-      "region_count": 4,
-      "tile_count": 589
-    },
-    "browser_capture": {
-      "state_sha256": "cbc1a6517f8979539b36e129145a6470ecba7a14f557240c8da4fef54db41104",
-      "screenshot_sha256": "f523380be5332d0de9b4dff4eaa6eeb6ef7b50e88daf90a9e57069131eba7871",
-      "navigation_status": 200,
-      "context_lost": false
-    }
-  },
-  "final_release_artifacts": {
-    "production_jar": {
-      "file_name": "bluemap-integrated-dynamics-addon-0.1.0-alpha.3.jar",
-      "size": 57598,
-      "sha256": "a82e8224360da54fab12d94a53408fb53e1f334c6e2b885e594cd50ed23ba828"
-    },
-    "sources_jar": {
-      "file_name": "bluemap-integrated-dynamics-addon-0.1.0-alpha.3-sources.jar",
-      "size": 26134,
-      "sha256": "8e53333752a1632e9e9cbf737206d40a5baf353276e5650d81cba71c6805cc93"
-    },
-    "pom": {
-      "file_name": "bluemap-integrated-dynamics-addon-0.1.0-alpha.3.pom",
-      "size": 1430,
-      "sha256": "a2e3d24179054aaa475fa80bacfec23744f0af435e8ef37dc859b06ad6dc1c6d"
-    },
-    "gradle_module": {
-      "file_name": "bluemap-integrated-dynamics-addon-0.1.0-alpha.3.module.json",
-      "size": 2901,
-      "sha256": "cf3b05849921a1306c85cb7e8e28ecf04f29e7ad0afeb02071cf6192d4140aee"
-    }
+    "actionlint": true,
+    "render_core_trust_probes": [
+      "missing-checkout",
+      "wrong-head",
+      "dirty-worktree"
+    ]
   }
 }

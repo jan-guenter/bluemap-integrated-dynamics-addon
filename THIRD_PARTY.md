@@ -3,6 +3,7 @@
 | Component | Exact accepted identity | Declared license | Bundled |
 | --- | --- | --- | --- |
 | BlueMap | Feature backport `5.22-feature.backport-5.23-stateless-java-web-server-46`, commit `7e07f4e74ec1e92a6ead9aa1e66054af3e133aac`; API `285c9a60eff3ac2b0cab308ce1058d1565be0971` | MIT | No |
+| BlueMap Add-on Render Core | `0.1.0-alpha.2`, commit `24b84efdc8235f3f1323e1a8e9fd033080e3a79e`, source tree `424040931680fb82d37693f893ca887c0ed48eae` | MIT | One source file |
 | BlueMap Add-on Adapter API | `0.1.0-alpha.2`, commit `e81f08bc4bfbf02d810ec8949a019130e2e61634` | MIT | Four source files |
 | CyclopsCore | `1.21.1-neoforge-1.29.2`, SHA-256 `1d36aaa3d9abb71d0151bb5edd02f5580dfb020a229c63f6534a87a04d1cfab6` | MIT | No |
 | Integrated Dynamics | `1.21.1-neoforge-1.34.0`, SHA-256 `2e6afc62a572cf3e1bd6b91321946790103c72793bc5fe1d0295c1138c072e87` | MIT | No |
@@ -14,9 +15,10 @@
 | Checkstyle | `10.18.2`, build only | LGPL-2.1-or-later | No |
 | Gradle | `9.6.1`, build only | Apache-2.0 | No |
 
-The production JAR contains first-party classes, four MIT Adapter API source
-classes, one first-party blockstate route, add-on metadata, and the project
-MIT license.
+The production JAR contains first-party classes, the MIT render-core face-light
+class, four MIT Adapter API source classes, one first-party blockstate route,
+add-on metadata, and the project MIT license. Neither standalone module JAR is
+bundled or installed.
 
 ## First-party reuse
 

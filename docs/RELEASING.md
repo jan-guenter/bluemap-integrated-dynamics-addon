@@ -5,9 +5,10 @@ Release only an owner-accepted renderer from a clean reviewed commit.
 1. Confirm the exact All the Mons, Minecraft, NeoForge, Java, BlueMap, and
    candidate-mod identities documented by this repository.
 2. Run the repository's complete `check` and build gates with every required
-   exact artifact property. Initialize the pinned toolkit and Adapter API with
-   `git submodule update --init --recursive`; both trust preflights must pass
-   from the release commit without modifying either gitlink or worktree.
+   exact artifact property. Initialize the pinned toolkit, Render Core, and
+   Adapter API with `git submodule update --init --recursive`; all trust
+   preflights must pass from the release commit without modifying any gitlink
+   or worktree.
 3. Verify the production and sources JAR boundaries, licenses, notices, and
    provenance. Do not bundle candidate-mod binaries, resources, source,
    galleries, worlds, logs, or credentials.
